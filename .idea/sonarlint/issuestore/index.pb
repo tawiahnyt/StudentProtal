@@ -20,3 +20,5 @@ D
 test.ipynb,9\0\90479d8bc9f8dfa7116261e4ed6ed71a98437648
 @
 requirements.txt,1\9\19359a61ae2446b51b549167b014da2fcf265768
+<
+courses.json,a\2\a236a7ddb8ee61146aee9e222ae8344f9f3893f5

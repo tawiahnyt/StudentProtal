@@ -1,5 +1,5 @@
 
-=python:S125"Remove this commented out code.(ó—’ö8Åã£‹2
-Gpython:S6779"#Don't disclose "Flask" secret keys.(ãé¥ıÿÿÿÿ8Æã£‹2
-=python:S125"Remove this commented out code.(Î®Ù8Æã£‹2
-=python:S125D"Remove this commented out code.(å¬Ğ´8Çã£‹2
+cpython:S125"Remove this commented out code.(ó—’ö8ÚØé—2J$388fb0e4-7ce3-4a1c-affb-557ffe49906d
+mpython:S6779	"#Don't disclose "Flask" secret keys.(ãé¥ıÿÿÿÿ8ÜØé—2J$5a760b98-f318-4e44-b125-e9d57ab48a44
+cpython:S125"Remove this commented out code.(Î®Ù8ÜØé—2J$84e1a504-feb4-434f-823e-8afe0f11664e
+cpython:S125E"Remove this commented out code.(å¬Ğ´8İØé—2J$3593fade-0d42-48ac-9049-ec3a8bf364d5

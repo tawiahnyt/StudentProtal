@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, flash, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin, login_user, LoginManager, login_required, current_user, logout_user
 # from werkzeug.security import check_password_hash
+import json
 
 app = Flask(__name__)
 
@@ -88,19 +89,19 @@ def login():
 @app.route('/home')
 @login_required
 def home():
-    data = {
+    home_data = {
         'first_name': current_user.first_name,
         'last_name': current_user.last_name,
         'other_name': current_user.other_name,
         'student_email': current_user.student_email,
         'gender': current_user.gender
     }
-    return render_template('home.html', logged_in=current_user.is_authenticated, data=data)
+    return render_template('home.html', logged_in=current_user.is_authenticated, data=home_data)
 
 
 @app.route('/account')
 def account():
-    data = {
+    account_data = {
         'student_id': current_user.student_id,
         'first_name': current_user.first_name,
         'last_name': current_user.last_name,
@@ -115,30 +116,33 @@ def account():
         'enrollment_date': current_user.enrollment_date,
         'graduation_date': current_user.graduation_date,
         'degree_programmes': current_user.degree_programmes,
-        'undergraduate_programmes': current_user.undergraduate_programmes,
         'guardian_name': current_user.guardian_name,
         'guardian_email': current_user.guardian_email,
         'guardian_phone': current_user.guardian_phone,
         'guardian_address': current_user.guardian_address,
-        'password': current_user.password
     }
-    cohort = int(data['enrollment_date'].split('-')[0]) - 1
-    return render_template('account.html', data=data, cohort=cohort, logged_in=current_user.is_authenticated)
+    cohort = int(account_data['enrollment_date'].split('-')[0]) - 1
+    return render_template('account.html', data=account_data, cohort=cohort, logged_in=current_user.is_authenticated)
 
 
 @app.route('/courses')
 def courses():
-    return render_template('courses.html')
+    with open('courses.json') as data:
+        new_data = json.load(data)
 
+    student_courses = new_data[current_user.degree_programmes][current_user.level]['first_semester']
 
-@app.route('/evaluation')
-def evaluation():
-    return render_template('evaluation.html')
+    return render_template('courses.html', courses=student_courses, logged_in=current_user.is_authenticated)
 
 
 @app.route('/results')
 def results():
     return render_template('results.html')
+
+
+@app.route('/evaluation')
+def evaluation():
+    return render_template('evaluation.html')
 
 
 if __name__ == '__main__':

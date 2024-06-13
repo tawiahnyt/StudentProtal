@@ -32,36 +32,43 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td class="p-4"><span>MATH 103 - DISCRETE MATHEMATICS FOR COMPUTER SCIENCE</span></td>
-                        <td class="p-4"><span>3</span></td>
-                        <td class="p-4"><span>Registered</span></td>
-                    </tr>
-                    <tr>
-                        <td class="p-4"><span>MATH 103 - DISCRETE MATHEMATICS FOR COMPUTER SCIENCE</span></td>
-                        <td class="p-4"><span>3</span></td>
-                        <td class="p-4"><span>Registered</span></td>
-                    </tr>
-                    <tr>
-                        <td class="p-4"><span>MATH 103 - DISCRETE MATHEMATICS FOR COMPUTER SCIENCE</span></td>
-                        <td class="p-4"><span>3</span></td>
-                        <td class="p-4"><span>Registered</span></td>
-                    </tr>
-                    <tr>
-                        <td class="p-4"><span>MATH 103 - DISCRETE MATHEMATICS FOR COMPUTER SCIENCE</span></td>
-                        <td class="p-4"><span>3</span></td>
-                        <td class="p-4"><span>Registered</span></td>
-                    </tr>
-                    <tr>
-                        <td class="p-4"><span>MATH 103 - DISCRETE MATHEMATICS FOR COMPUTER SCIENCE</span></td>
-                        <td class="p-4"><span>3</span></td>
-                        <td class="p-4"><span>Registered</span></td>
-                    </tr>
-                    <tr>
-                        <td class="p-4"><span>MATH 103 - DISCRETE MATHEMATICS FOR COMPUTER SCIENCE</span></td>
-                        <td class="p-4"><span>3</span></td>
-                        <td class="p-4"><span>Registered</span></td>
-                    </tr>
+                {% for course in courses %}
+                <tr>
+                    <td class="p-4"><span>{{  course.course_code }} - {{ course.course_title }}</span></td>
+                    <td class="p-4"><span>{{ course.credit_hour }}</span></td>
+                    <td class="p-4"><span>Not Registered</span></td>
+                </tr>
+                {% endfor %}
+{#                    <tr>#}
+{#                        <td class="p-4"><span>MATH 103 - DISCRETE MATHEMATICS FOR COMPUTER SCIENCE</span></td>#}
+{#                        <td class="p-4"><span>3</span></td>#}
+{#                        <td class="p-4"><span>Registered</span></td>#}
+{#                    </tr>#}
+{#                    <tr>#}
+{#                        <td class="p-4"><span>MATH 103 - DISCRETE MATHEMATICS FOR COMPUTER SCIENCE</span></td>#}
+{#                        <td class="p-4"><span>3</span></td>#}
+{#                        <td class="p-4"><span>Registered</span></td>#}
+{#                    </tr>#}
+{#                    <tr>#}
+{#                        <td class="p-4"><span>MATH 103 - DISCRETE MATHEMATICS FOR COMPUTER SCIENCE</span></td>#}
+{#                        <td class="p-4"><span>3</span></td>#}
+{#                        <td class="p-4"><span>Registered</span></td>#}
+{#                    </tr>#}
+{#                    <tr>#}
+{#                        <td class="p-4"><span>MATH 103 - DISCRETE MATHEMATICS FOR COMPUTER SCIENCE</span></td>#}
+{#                        <td class="p-4"><span>3</span></td>#}
+{#                        <td class="p-4"><span>Registered</span></td>#}
+{#                    </tr>#}
+{#                    <tr>#}
+{#                        <td class="p-4"><span>MATH 103 - DISCRETE MATHEMATICS FOR COMPUTER SCIENCE</span></td>#}
+{#                        <td class="p-4"><span>3</span></td>#}
+{#                        <td class="p-4"><span>Registered</span></td>#}
+{#                    </tr>#}
+{#                    <tr>#}
+{#                        <td class="p-4"><span>MATH 103 - DISCRETE MATHEMATICS FOR COMPUTER SCIENCE</span></td>#}
+{#                        <td class="p-4"><span>3</span></td>#}
+{#                        <td class="p-4"><span>Registered</span></td>#}
+{#                    </tr>#}
                 </tbody>
             </table>
 
