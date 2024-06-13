@@ -1,0 +1,164 @@
+{% extends "base.html" %}
+
+{% block title %} Ghana Communication Technology University (GCTU) {% endblock %}
+
+{% block content %}
+    <section class="mb-4">
+        <div class="container justify-content-center" style="width: auto; margin-top: 2%;">
+            <div class="border rounded-3 bg-white mt-3 p-1">
+                <div class="row py-2">
+                    <div class="col-auto m-0 px-4 ps-4">
+                        <i style="font-size: 2.5rem;" class="bi bi-person-square"></i>
+                    </div>
+                    <div class="col-auto my-auto p-0 lh-small">
+                        {% set title = '' %}
+                        {% if data.gender == 'Male' %}
+                            {% set title = 'Mr.' %}
+                        {% else %}
+                            {% set title = 'Ms.' %}
+                        {% endif %}
+                        <p class="fs-5 fw-bold">{{ title }} {{ data.first_name }}, {{ data.last_name }} {{ data.other_name }}</p>
+                        <span class="fw-lighter fs-smaller">{{ data.student_email }}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="border rounded-3 bg-white mt-3 p-3">
+                <p>Academic Year</p>
+                <h2><b>2023/2024, First Semester</b></h2>
+            </div>
+        </div>
+
+        <!-- features div -->
+        <div class="container justify-content-center" style="width: auto; margin-top: 3%;">
+            <div class="row g-3">
+                <div href="#" style="border-radius: 10px;" class="col-lg-3 text-center">
+                    <div class="border rounded-3 bg-white">
+                        <a href="{{ url_for('account') }}">
+                            <div class="py-3">
+                                <p><i style="font-size: 2rem;" class="bi bi-person-square"></i></p>
+                                <p style="font-size: 1rem;">My Account</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div href="#" style="border-radius: 10px;" class="col-lg-3 text-center">
+                    <div class="border rounded-3 bg-white">
+                        <a href="{{ url_for('courses') }}">
+                            <div class="py-3">
+                                <p><i style="font-size: 2rem;" class="bi bi-journal-text"></i></p>
+                                <p style="font-size: 1rem;">Course Registration</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div href="#" style="border-radius: 10px;" class="col-lg-3 text-center">
+                    <div class="border rounded-3 bg-white">
+                        <a href="{{ url_for('results') }}">
+                            <div class="py-3">
+                                <p><i style="font-size: 2rem;" class="bi bi-file-earmark-fill"></i></p>
+                                <p style="font-size: 1rem;">My Results Slip</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <!-- <div href="#" style="border-radius: 10px;" class="col-lg-3 text-center">
+                    <div class="border rounded-3 bg-white">
+                        <a href="">
+                            <div class="py-3">
+                                <p><i style="font-size: 2rem;" class="bi bi-wallet2"></i></p>
+                                <p style="font-size: 1rem;">Account Statement</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div href="#" style="border-radius: 10px;" class="col-lg-3 text-center">
+                    <div class="border rounded-3 bg-white">
+                        <a href="">
+                            <div class="py-3">
+                                <p><i style="font-size: 2rem;" class="bi bi-calendar"></i></p>
+                                <p style="font-size: 1rem;">Time Table</p>
+                            </div>
+                        </a>
+                    </div>
+                </div> -->
+                <div href="#" style="border-radius: 10px;" class="col-lg-3 text-center">
+                    <div class="border rounded-3 bg-white">
+                        <a href="{{ url_for('evaluation') }}">
+                            <div class="py-3">
+                                <p><i style="font-size: 2rem;" class="bi bi-star-fill"></i></p>
+                                <p style="font-size: 1rem;">Lecturer Evaluation</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div href="#" style="border-radius: 10px;" class="col-lg-3 text-center">
+                    <div class="border rounded-3 bg-white">
+                        <a href="">
+                            <div class="py-3">
+                                <p><i style="font-size: 2rem;" class="bi bi-folder"></i></p>
+                                <p style="font-size: 1rem;">Document Request</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div href="#" style="border-radius: 10px;" class="col-lg-3 text-center">
+                    <div class="border rounded-3 bg-white">
+                        <a href="">
+                            <div class="py-3">
+                                <p><i style="font-size: 2rem;" class="bi bi-question-circle-fill"></i></p>
+                                <p style="font-size: 1rem;">FAQs</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div href="#" style="border-radius: 10px;" class="col-lg-3 text-center">
+                    <div class="border rounded-3 bg-white">
+                        <a href="">
+                            <div class="py-3">
+                                <p><i style="font-size: 2rem;" class="bi bi-telephone"></i></p>
+                                <p style="font-size: 1rem;">Contact Us</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <!-- <div href="#" style="border-radius: 10px;" class="col-lg-3 text-center">
+                    <div class="border rounded-3 bg-white">
+                        <a href="">
+                            <div class="py-3">
+                                <p><i style="font-size: 2rem;" class="bi bi-journal-text"></i></p>
+                                <p style="font-size: 1rem;">Course Registration</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div href="#" style="border-radius: 10px;" class="col-lg-3 text-center">
+                    <div class="border rounded-3 bg-white">
+                        <a href="">
+                            <div class="py-3">
+                                <p><i style="font-size: 2rem;" class="bi bi-file-earmark-fill"></i></p>
+                                <p style="font-size: 1rem;">My Results Slip</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div href="#" style="border-radius: 10px;" class="col-lg-3 text-center">
+                    <div class="border rounded-3 bg-white">
+                        <a href="">
+                            <div class="py-3">
+                                <p><i style="font-size: 2rem;" class="bi bi-wallet2"></i></p>
+                                <p style="font-size: 1rem;">Account Statement</p>
+                            </div>
+                        </a>
+                    </div>
+                </div> -->
+            </div>
+
+            <div class="d-flex justify-content-center" style="margin-top: 5%;">
+                <button style="padding: 1% 5%;" class="btn btn-outline-danger mx-auto">Sign Out</button>
+            </div>
+
+        </div>
+
+
+    </section>
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block title %} Evaluation {% endblock %}
+
+{% block content %}
+    <section class="pb-4">
+        <div class="container justify-content-center" style="width: auto; margin-top: 2%;">
+            <div class="border mt-3 bg-white rounded-3">
+                <div class="row py-2">
+                    <div class="col-auto m-0 px-4 ps-4">
+                        <a href="{{ url_for('home') }}"><i style="font-size: 2.5rem;"
+                                class="bi bi-arrow-left-circle-fill"></i></i></a>
+                    </div>
+                    <div class="col-auto my-auto p-0">
+                        <p class="fs-5 fw-semibold">Lecturer Evaluation</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mt-3">
+            <table class="table">
+                <thead class="table-secondary">
+                    <tr>
+                        <th class="fw-semibold p-3">Courses</th>
+                        <th class="fw-semibold p-3">Lecturer</th>
+                        <th class="fw-semibold p-3"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="p-3"><span>MATH 103 - DISCRETE MATHEMATICS FOR COMPUTER SCIENCE</span></td>
+                        <td class="p-3"><span>Dr Emmanuel Freeman </span></td>
+                        <td class="p-3"><button href="" class="btn btn-secondary rounded-1"><i class="bi bi-check2"></i> Evaluate</button></td>
+                    </tr>
+                    <tr>
+                        <td class="p-3"><span>MATH 103 - DISCRETE MATHEMATICS FOR COMPUTER SCIENCE</span></td>
+                        <td class="p-3"><span>Dr Emmanuel Freeman </span></td>
+                        <td class="p-3"><button href="" class="btn btn-secondary rounded-1"><i class="bi bi-check2"></i> Evaluate</button></td>
+                    </tr>
+                    <tr>
+                        <td class="p-3"><span>MATH 103 - DISCRETE MATHEMATICS FOR COMPUTER SCIENCE</span></td>
+                        <td class="p-3"><span>Dr Emmanuel Freeman </span></td>
+                        <td class="p-3"><button href="" class="btn btn-secondary rounded-1"><i class="bi bi-check2"></i> Evaluate</button></td>
+                    </tr>
+                    <tr>
+                        <td class="p-3"><span>MATH 103 - DISCRETE MATHEMATICS FOR COMPUTER SCIENCE</span></td>
+                        <td class="p-3"><span>Dr Emmanuel Freeman </span></td>
+                        <td class="p-3"><button href="" class="btn btn-secondary rounded-1"><i class="bi bi-check2"></i> Evaluate</button></td>
+                    </tr>
+                    <tr>
+                        <td class="p-3"><span>MATH 103 - DISCRETE MATHEMATICS FOR COMPUTER SCIENCE</span></td>
+                        <td class="p-3"><span>Dr Emmanuel Freeman </span></td>
+                        <td class="p-3"><button href="" class="btn btn-secondary rounded-1"><i class="bi bi-check2"></i> Evaluate</button></td>
+                    </tr>
+                    <tr>
+                        <td class="p-3"><span>MATH 103 - DISCRETE MATHEMATICS FOR COMPUTER SCIENCE</span></td>
+                        <td class="p-3"><span>Dr Emmanuel Freeman </span></td>
+                        <td class="p-3"><button href="" class="btn btn-secondary rounded-1"><i class="bi bi-check2"></i> Evaluate</button></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </section>
+{% endblock %}

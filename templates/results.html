@@ -1,0 +1,265 @@
+{% extends "base.html" %}
+
+{% block title %} My Results {% endblock %}
+
+{% block content %}
+    <section class="pb-4">
+        <div class="container justify-content-center" style="margin-top: 2%;">
+            <div class="border mt-3 bg-white rounded-3">
+                <div class="row py-2">
+                    <div class="col-auto m-0 px-4 ps-4">
+                        <a href="{{ url_for('home') }}"><i style="font-size: 2.5rem;"
+                                class="bi bi-arrow-left-circle-fill"></i></i></a>
+                    </div>
+                    <div class="col-auto my-auto p-0">
+                        <p class="fs-5 fw-semibold">My Results Slip</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container pt-4">
+            <div class="border bg-white rounded-3 p-4">
+                <div class="text-center pb-5">
+                    <h3 class="fw-bold fs-4">Ghana Communication Technology University (GCTU)</h3>
+                    <h5 class="fw-normal fw-bold fs-6">Knowledge Comes from Learning</h5>
+                    <img src="/static/images/logo.png" width="100px" alt="">
+                </div>
+
+                <div class="text-center">
+                    <h3 class="fs-4 fw-normal">RESULTS SLIP</h3>
+                </div>
+
+                <table class="table p-3">
+                    <tbody>
+                        <tr>
+                            <td colspan="8" style="text-align: right;"><strong>Date: May 27, 2024</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Name:</strong></td>
+                            <td><strong>Ms Adoboli, Isabella Adwoa</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Student ID:</strong></td>
+                            <td><strong>1702835037</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Programme:</strong></td>
+                            <td><strong>BSc Computer Science (Cyber Security option)</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Level:</strong></td>
+                            <td><strong>100</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Session:</strong></td>
+                            <td><strong>Morning</strong></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+                <table class="table table-products table-responsive lh-lg">
+                    <tbody>
+                        <tr>
+                            <td colspan="8">&nbsp;</td>
+                        </tr>
+                        <tr class="title">
+                            <td colspan="8">
+                                <h4 class="title" style="color: blue;"><strong>2023/2024 Level 100</strong></h4>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="8">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td colspan="8"><span class="text-md" style="color: rgb(155, 16, 16);"><strong>First Semester
+                                    </strong></span></td>
+                        </tr>
+                        <tr>
+                            <td colspan="8">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td><strong>CODE</strong></td>
+                            <td><strong>COURSE TITLE</strong></td>
+                            <td><strong></strong></td>
+                            <td><strong>CREDITS</strong></td>
+                            <td><strong>SCORE</strong></td>
+                            <td><strong></strong></td>
+                            <td class="text-center"><strong>GRADE POINT</strong></td>
+                            <td class="text-center"><strong>GRADE</strong></td>
+                        </tr>
+                    </tbody>
+                    <tbody style="font-size: 14px;" class="">
+                        <tr>
+                            <td><strong>ENGL 171</strong></td>
+                            <td>COMMUNICATION SKILLS I</td>
+                            <td></td>
+                            <td class="text-center">2</td>
+                            <td class="text-center">0</td>
+                            <td colspan="2" class="text-center" style="color: rgb(206, 26, 26);"><strong>Result Not
+                                    Published</strong> </td>
+                            <td class="text-center"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>CSSD 111</strong></td>
+                            <td>INTRODUCTION TO COMPUTER SYSTEMS</td>
+                            <td></td>
+                            <td class="text-center">3</td>
+                            <td class="text-center">0</td>
+                            <td colspan="2" class="text-center" style="color: rgb(206, 26, 26);"><strong>Result Not
+                                    Published</strong> </td>
+                            <td class="text-center"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>CSPC 132</strong></td>
+                            <td>PHYSICS FOR COMPUTING SYSTEMS</td>
+                            <td></td>
+                            <td class="text-center">3</td>
+                            <td class="text-center">0</td>
+                            <td colspan="2" class="text-center" style="color: rgb(206, 26, 26);"><strong>Result Not
+                                    Published</strong> </td>
+                            <td class="text-center"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>FREN 171</strong></td>
+                            <td>BASIC FRENCH I</td>
+                            <td></td>
+                            <td class="text-center">1</td>
+                            <td class="text-center">0</td>
+                            <td colspan="2" class="text-center" style="color: rgb(206, 26, 26);"><strong>Result Not
+                                    Published</strong> </td>
+                            <td class="text-center"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>CSSD 101</strong></td>
+                            <td>PROGRAMMING &amp; PROBLEM SOLVING</td>
+                            <td></td>
+                            <td class="text-center">3</td>
+                            <td class="text-center">0</td>
+                            <td colspan="2" class="text-center" style="color: rgb(206, 26, 26);"><strong>Result Not
+                                    Published</strong> </td>
+                            <td class="text-center"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>GTGE 121</strong></td>
+                            <td>INTRODUCTION TO ELECTRONICS</td>
+                            <td></td>
+                            <td class="text-center">3</td>
+                            <td class="text-center">0</td>
+                            <td colspan="2" class="text-center" style="color: rgb(206, 26, 26);"><strong>Result Not
+                                    Published</strong> </td>
+                            <td class="text-center"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>MATH 105</strong></td>
+                            <td>LINEAR ALGEBRA</td>
+                            <td></td>
+                            <td class="text-center">3</td>
+                            <td class="text-center">0</td>
+                            <td colspan="2" class="text-center" style="color: rgb(206, 26, 26);"><strong>Result Not
+                                    Published</strong> </td>
+                            <td class="text-center"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>MATH 103</strong></td>
+                            <td>DISCRETE MATHEMATICS FOR COMPUTER SCIENCE</td>
+                            <td></td>
+                            <td class="text-center">3</td>
+                            <td class="text-center">0</td>
+                            <td colspan="2" class="text-center" style="color: rgb(206, 26, 26);"><strong>Result Not
+                                    Published</strong> </td>
+                            <td class="text-center"></td>
+                        </tr>
+
+
+                    </tbody>
+
+                    <tbody>
+                        <tr>
+                            <td colspan="8">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td colspan="6"></td>
+                            <td class="text-center"><strong class="text-decoration-underline" style="color: rgb(189, 71, 32);">Semester</strong>
+                            </td>
+                            <td class="text-center"><strong class="text-decoration-underline"
+                                    style="color: rgb(189, 71, 32);">Cumulative</strong></td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <div class="text-end"><strong>Total Credits Published: </strong></div>
+                            </td>
+                            <td>
+                                <div class="text-center"> 0 </div>
+                            </td>
+                            <td>
+                                <div class="text-center"> 0 </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <div class="text-end"><strong>Total Credits Passed: </strong></div>
+                            </td>
+                            <td>
+                                <div class="text-center"> 0 </div>
+                            </td>
+                            <td>
+                                <div class="text-center"> 0 </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <div class="text-end"><strong>Total Credits Taken: </strong></div>
+                            </td>
+                            <td>
+                                <div class="text-center"> 21 </div>
+                            </td>
+                            <td>
+                                <div class="text-center"> 21 </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <div class="text-end"><strong>Total Grade Points: </strong></div>
+                            </td>
+                            <td>
+                                <div class="text-center"> 0 </div>
+                            </td>
+                            <td>
+                                <div class="text-center">0.00 </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="6">
+                                <div class="text-end"><strong>Grade Point Average (GPA): </strong></div>
+                            </td>
+                            <td>
+                                <div class="text-center"> 0 </div>
+                            </td>
+                            <td>
+                                <div class="text-center">0 </div>
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td colspan="8">&nbsp;</td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="8">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td colspan="8">&nbsp;</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <button style="width: 100%;" class="btn btn-primary p-2">Print Result Slip</button>
+        </div>
+    </section>
+{% endblock %}

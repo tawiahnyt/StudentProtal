@@ -1,0 +1,104 @@
+body {
+    max-width: 920px;
+    margin: auto;
+}
+
+.navbar {
+    background-color: #f0f0f0;
+    /* Example background color */
+}
+
+.student-portal {
+    max-width: 450px;
+    padding: 1rem;
+    /* border-radius: 5px;
+    margin-top: auto;
+    padding: 5%;
+    width: 50%; */
+    /* max-width: 500px; */
+}
+
+
+.login-box {
+    background-color: #fff;
+    border: 0px black solid;
+    border-radius: 5px;
+    padding: 12% 7%;
+    width: auto;
+}
+
+@media (max-width: 980px) {
+    .login-box {
+        padding: 12% 5%;
+    }
+}
+
+.input-control {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 2%;
+    margin-bottom: 2%;
+    width: 100%;
+}
+
+.input-control:focus {
+    border: 3px solid rgb(5, 5, 63);
+    box-shadow: none;
+}
+
+.btn-control {
+    background-color: rgb(5, 5, 63);
+    border: 1px solid rgb(5, 5, 63);
+    border-radius: 5px;
+    color: #fff;
+    padding: 2%;
+    margin-bottom: 2%;
+    width: 100%;
+}
+
+.btn-control:focus {
+    background-color: rgb(5, 5, 63);
+    box-shadow: none;
+}
+
+.btn-control:hover {
+    background-color: rgb(3, 3, 39);
+}
+
+.btn-control2 {
+    border-radius: 5px;
+    color: red;
+    padding: 2%;
+    margin-bottom: 2%;
+    text-align: left;
+    width: 100%;
+}
+
+.student-profile {
+    background-color: #e2e8f0;
+    border: 0px solid;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 12px;
+    /* width: auto; */
+
+}
+
+hr {
+    margin: 3% 0;
+}
+
+footer {
+    font-size: 13px;
+}
+
+p,
+h5 {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}

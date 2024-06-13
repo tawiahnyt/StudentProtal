@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block title %} My Courses {% endblock %}
+
+{% block content %}
+    <section class="pb-4">
+        <div class="container justify-content-center" style="width: auto; margin-top: 2%;">
+            <div class="border mt-3 bg-white rounded-3">
+                <div class="row py-2">
+                    <div class="col-auto m-0 px-4 ps-4">
+                        <a href="{{ url_for('home') }}"><i style="font-size: 2.5rem;"
+                                class="bi bi-arrow-left-circle-fill"></i></i></a>
+                    </div>
+                    <div class="col-auto my-auto p-0">
+                        <p class="fs-5 fw-semibold">Course Registration</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container col-12 text-end pt-4">
+            <button type="submit" class="btn btn-dark px-3 py-2 rounded-1">Export</button>
+        </div>
+
+        <div class="container mt-3">
+            <table class="table">
+                <thead class="table-secondary">
+                    <tr>
+                        <th class="fw-semibold p-3">Courses</th>
+                        <th class="fw-semibold p-3">Course Credits</th>
+                        <th class="fw-semibold p-3">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="p-4"><span>MATH 103 - DISCRETE MATHEMATICS FOR COMPUTER SCIENCE</span></td>
+                        <td class="p-4"><span>3</span></td>
+                        <td class="p-4"><span>Registered</span></td>
+                    </tr>
+                    <tr>
+                        <td class="p-4"><span>MATH 103 - DISCRETE MATHEMATICS FOR COMPUTER SCIENCE</span></td>
+                        <td class="p-4"><span>3</span></td>
+                        <td class="p-4"><span>Registered</span></td>
+                    </tr>
+                    <tr>
+                        <td class="p-4"><span>MATH 103 - DISCRETE MATHEMATICS FOR COMPUTER SCIENCE</span></td>
+                        <td class="p-4"><span>3</span></td>
+                        <td class="p-4"><span>Registered</span></td>
+                    </tr>
+                    <tr>
+                        <td class="p-4"><span>MATH 103 - DISCRETE MATHEMATICS FOR COMPUTER SCIENCE</span></td>
+                        <td class="p-4"><span>3</span></td>
+                        <td class="p-4"><span>Registered</span></td>
+                    </tr>
+                    <tr>
+                        <td class="p-4"><span>MATH 103 - DISCRETE MATHEMATICS FOR COMPUTER SCIENCE</span></td>
+                        <td class="p-4"><span>3</span></td>
+                        <td class="p-4"><span>Registered</span></td>
+                    </tr>
+                    <tr>
+                        <td class="p-4"><span>MATH 103 - DISCRETE MATHEMATICS FOR COMPUTER SCIENCE</span></td>
+                        <td class="p-4"><span>3</span></td>
+                        <td class="p-4"><span>Registered</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </section>
+{% endblock %}

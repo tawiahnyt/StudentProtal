@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %} Ghana Communication Technology University (GCTU) {% endblock %}
+
+{% block content %}
+    <section>
+        <div class="container-fluid student-portal">
+            <div class="card">
+                <div class="text-center py-4">
+                    <img src="/static/images/logo.png" width="100px" alt="">
+                    <h3><b>Student Portal</b></h3>
+                    <p>Welcome to the official student portal for Ghana Communication Technology University (GCTU)
+                </div>
+                <div class="login-box">
+                    <form action="{{ url_for('login') }}" method="POST">
+                        {% with messages = get_flashed_messages() %}
+                            {% if messages %}
+                                {% for message in messages %}
+                                    <span style="color: red; font-style: italic">{{ message }}</span>
+                                {% endfor %}
+                            {% endif %}
+                        {% endwith %}
+                        <div class="mb-3">
+                            <input type="text" class="form-control input-control" placeholder="Student ID" name="username">
+                        </div>
+                        <div class="mb-3">
+                            <input type="password" class="form-control input-control" placeholder="Password" name="password">
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Remember Me</label>
+                        </div>
+
+                        <button type="submit" class="btn-control">Login</button>
+{#                        <button type="submit" class="btn btn-outline-danger btn-control2">Forgot your password?#}
+{#                            Click here to do a password reset.</button>#}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
