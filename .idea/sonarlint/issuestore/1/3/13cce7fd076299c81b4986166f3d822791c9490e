@@ -1,5 +1,5 @@
 
-cpython:S125"Remove this commented out code.(ó—’ö8ÚØé—2J$388fb0e4-7ce3-4a1c-affb-557ffe49906d
-mpython:S6779	"#Don't disclose "Flask" secret keys.(ãé¥ıÿÿÿÿ8ÜØé—2J$5a760b98-f318-4e44-b125-e9d57ab48a44
-cpython:S125"Remove this commented out code.(Î®Ù8ÜØé—2J$84e1a504-feb4-434f-823e-8afe0f11664e
-cpython:S125E"Remove this commented out code.(å¬Ğ´8İØé—2J$3593fade-0d42-48ac-9049-ec3a8bf364d5
+§python:S1192ó"\Define a constant instead of duplicating this literal 'BSc. Information Technology' 6 times.(áĞ›úÿÿÿÿ8¥Á³à‚2J$28acc6e7-4ef8-4377-9ddd-4ed4c1c6162e
+mpython:S6779	"#Don't disclose "Flask" secret keys.(ãé¥ıÿÿÿÿ8§Á³à‚2J$78b8ae55-1cb9-4654-aa0b-b953b8339900
+cpython:S125b"Remove this commented out code.(Â‘ş…8§Á³à‚2J$02d3ee0d-4161-4efd-95f3-f4bf83075b39
+dpython:S125€"Remove this commented out code.(ğİú¿8§Á³à‚2J$692d2906-44bf-49e9-a352-cdb924e8e4b4

@@ -37,36 +37,45 @@
                         </tr>
                         <tr>
                             <td><strong>Name:</strong></td>
-                            <td><strong>Ms Adoboli, Isabella Adwoa</strong></td>
+                            {% set title = '' %}
+                            {% if data.gender == 'Male' %}
+                                {% set title = 'Mr.' %}
+                            {% else %}
+                                {% set title = 'Ms.' %}
+                            {% endif %}
+                            <td><strong>{{ title }} {{ data.first_name }}, {{ data.last_name }} {{ data.other_name }}</strong></td>
                         </tr>
                         <tr>
                             <td><strong>Student ID:</strong></td>
-                            <td><strong>1702835037</strong></td>
+                            <td><strong>{{ data.student_id }}</strong></td>
                         </tr>
                         <tr>
                             <td><strong>Programme:</strong></td>
-                            <td><strong>BSc Computer Science (Cyber Security option)</strong></td>
+                            <td><strong>{{ data.degree_programmes }}</strong></td>
                         </tr>
                         <tr>
                             <td><strong>Level:</strong></td>
-                            <td><strong>100</strong></td>
+                            <td><strong>{{ data.level }}</strong></td>
                         </tr>
                         <tr>
                             <td><strong>Session:</strong></td>
-                            <td><strong>Morning</strong></td>
+                            <td><strong>{{ data.student_type }}</strong></td>
                         </tr>
 
                     </tbody>
                 </table>
 
                 <table class="table table-products table-responsive lh-lg">
+
+{#                Level 100 First Semester for Level 200, 300 and 400#}
+                {% if data.level == '400' or data.level == '300' or data.level == '200' %}
                     <tbody>
                         <tr>
                             <td colspan="8">&nbsp;</td>
                         </tr>
                         <tr class="title">
                             <td colspan="8">
-                                <h4 class="title" style="color: blue;"><strong>2023/2024 Level 100</strong></h4>
+                                <h4 class="title" style="color: blue;"><strong>{{ year - 1 }}/{{ year }} Level 100</strong></h4>
                             </td>
                         </tr>
 
@@ -92,88 +101,19 @@
                         </tr>
                     </tbody>
                     <tbody style="font-size: 14px;" class="">
+                        {% for course in l100_first_semester %}
                         <tr>
-                            <td><strong>ENGL 171</strong></td>
-                            <td>COMMUNICATION SKILLS I</td>
+                            <td><strong>{{ course.course_code }}</strong></td>
+                            {% set course_code = course.course_code %}
+                            <td>{{ course.course_title }}</td>
                             <td></td>
-                            <td class="text-center">2</td>
-                            <td class="text-center">0</td>
+                            <td class="text-center">{{ course.credit_hour }}</td>
+                            <td class="text-center">{{ results[course_code.replace('-', '_')] }}</td>
                             <td colspan="2" class="text-center" style="color: rgb(206, 26, 26);"><strong>Result Not
                                     Published</strong> </td>
                             <td class="text-center"></td>
                         </tr>
-                        <tr>
-                            <td><strong>CSSD 111</strong></td>
-                            <td>INTRODUCTION TO COMPUTER SYSTEMS</td>
-                            <td></td>
-                            <td class="text-center">3</td>
-                            <td class="text-center">0</td>
-                            <td colspan="2" class="text-center" style="color: rgb(206, 26, 26);"><strong>Result Not
-                                    Published</strong> </td>
-                            <td class="text-center"></td>
-                        </tr>
-                        <tr>
-                            <td><strong>CSPC 132</strong></td>
-                            <td>PHYSICS FOR COMPUTING SYSTEMS</td>
-                            <td></td>
-                            <td class="text-center">3</td>
-                            <td class="text-center">0</td>
-                            <td colspan="2" class="text-center" style="color: rgb(206, 26, 26);"><strong>Result Not
-                                    Published</strong> </td>
-                            <td class="text-center"></td>
-                        </tr>
-                        <tr>
-                            <td><strong>FREN 171</strong></td>
-                            <td>BASIC FRENCH I</td>
-                            <td></td>
-                            <td class="text-center">1</td>
-                            <td class="text-center">0</td>
-                            <td colspan="2" class="text-center" style="color: rgb(206, 26, 26);"><strong>Result Not
-                                    Published</strong> </td>
-                            <td class="text-center"></td>
-                        </tr>
-                        <tr>
-                            <td><strong>CSSD 101</strong></td>
-                            <td>PROGRAMMING &amp; PROBLEM SOLVING</td>
-                            <td></td>
-                            <td class="text-center">3</td>
-                            <td class="text-center">0</td>
-                            <td colspan="2" class="text-center" style="color: rgb(206, 26, 26);"><strong>Result Not
-                                    Published</strong> </td>
-                            <td class="text-center"></td>
-                        </tr>
-                        <tr>
-                            <td><strong>GTGE 121</strong></td>
-                            <td>INTRODUCTION TO ELECTRONICS</td>
-                            <td></td>
-                            <td class="text-center">3</td>
-                            <td class="text-center">0</td>
-                            <td colspan="2" class="text-center" style="color: rgb(206, 26, 26);"><strong>Result Not
-                                    Published</strong> </td>
-                            <td class="text-center"></td>
-                        </tr>
-                        <tr>
-                            <td><strong>MATH 105</strong></td>
-                            <td>LINEAR ALGEBRA</td>
-                            <td></td>
-                            <td class="text-center">3</td>
-                            <td class="text-center">0</td>
-                            <td colspan="2" class="text-center" style="color: rgb(206, 26, 26);"><strong>Result Not
-                                    Published</strong> </td>
-                            <td class="text-center"></td>
-                        </tr>
-                        <tr>
-                            <td><strong>MATH 103</strong></td>
-                            <td>DISCRETE MATHEMATICS FOR COMPUTER SCIENCE</td>
-                            <td></td>
-                            <td class="text-center">3</td>
-                            <td class="text-center">0</td>
-                            <td colspan="2" class="text-center" style="color: rgb(206, 26, 26);"><strong>Result Not
-                                    Published</strong> </td>
-                            <td class="text-center"></td>
-                        </tr>
-
-
+                        {% endfor %}
                     </tbody>
 
                     <tbody>
@@ -244,7 +184,6 @@
                             </td>
                         </tr>
 
-
                         <tr>
                             <td colspan="8">&nbsp;</td>
                         </tr>
@@ -255,7 +194,784 @@
                         <tr>
                             <td colspan="8">&nbsp;</td>
                         </tr>
+                    </tbody>
+                {% endif %}
 
+{#                Level 100 Second Semester for Level 200, 300 and 400#}
+                {% if data.level == '400' or data.level == '300' or data.level == '200' %}
+                    <tbody>
+                        <tr>
+                            <td colspan="8">&nbsp;</td>
+                        </tr>
+                        <tr class="title">
+                            <td colspan="8">
+                                <h4 class="title" style="color: blue;"><strong>{{ year - 1 }}/{{ year }} Level 100</strong></h4>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="8">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td colspan="8"><span class="text-md" style="color: rgb(155, 16, 16);"><strong>Second Semester
+                                    </strong></span></td>
+                        </tr>
+                        <tr>
+                            <td colspan="8">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td><strong>CODE</strong></td>
+                            <td><strong>COURSE TITLE</strong></td>
+                            <td><strong></strong></td>
+                            <td><strong>CREDITS</strong></td>
+                            <td><strong>SCORE</strong></td>
+                            <td><strong></strong></td>
+                            <td class="text-center"><strong>GRADE POINT</strong></td>
+                            <td class="text-center"><strong>GRADE</strong></td>
+                        </tr>
+                    </tbody>
+                    <tbody style="font-size: 14px;" class="">
+                        {% for course in l100_second_semester %}
+                        <tr>
+                            <td><strong>{{ course.course_code }}</strong></td>
+                            {% set course_code = course.course_code %}
+                            <td>{{ course.course_title }}</td>
+                            <td></td>
+                            <td class="text-center">{{ course.credit_hour }}</td>
+                            <td class="text-center">{{ results[course_code.replace('-', '_')] }}</td>
+                            <td colspan="2" class="text-center" style="color: rgb(206, 26, 26);"><strong>Result Not
+                                    Published</strong> </td>
+                            <td class="text-center"></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+
+                    <tbody>
+                        <tr>
+                            <td colspan="8">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td colspan="6"></td>
+                            <td class="text-center"><strong class="text-decoration-underline" style="color: rgb(189, 71, 32);">Semester</strong>
+                            </td>
+                            <td class="text-center"><strong class="text-decoration-underline"
+                                    style="color: rgb(189, 71, 32);">Cumulative</strong></td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <div class="text-end"><strong>Total Credits Published: </strong></div>
+                            </td>
+                            <td>
+                                <div class="text-center"> 0 </div>
+                            </td>
+                            <td>
+                                <div class="text-center"> 0 </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <div class="text-end"><strong>Total Credits Passed: </strong></div>
+                            </td>
+                            <td>
+                                <div class="text-center"> 0 </div>
+                            </td>
+                            <td>
+                                <div class="text-center"> 0 </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <div class="text-end"><strong>Total Credits Taken: </strong></div>
+                            </td>
+                            <td>
+                                <div class="text-center"> 21 </div>
+                            </td>
+                            <td>
+                                <div class="text-center"> 21 </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <div class="text-end"><strong>Total Grade Points: </strong></div>
+                            </td>
+                            <td>
+                                <div class="text-center"> 0 </div>
+                            </td>
+                            <td>
+                                <div class="text-center">0.00 </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="6">
+                                <div class="text-end"><strong>Grade Point Average (GPA): </strong></div>
+                            </td>
+                            <td>
+                                <div class="text-center"> 0 </div>
+                            </td>
+                            <td>
+                                <div class="text-center">0 </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="8">&nbsp;</td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="8">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td colspan="8">&nbsp;</td>
+                        </tr>
+                    </tbody>
+                {% endif %}
+
+{#                Level 200 First Semester for Level 300 and 400#}
+                {% if data.level == '400' or data.level == '300' %}
+                    <tbody>
+                        <tr>
+                            <td colspan="8">&nbsp;</td>
+                        </tr>
+                        <tr class="title">
+                            <td colspan="8">
+                                <h4 class="title" style="color: blue;"><strong>{{ year }}/{{ year + 1 }} Level 200</strong></h4>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="8">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td colspan="8"><span class="text-md" style="color: rgb(155, 16, 16);"><strong>First Semester
+                                    </strong></span></td>
+                        </tr>
+                        <tr>
+                            <td colspan="8">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td><strong>CODE</strong></td>
+                            <td><strong>COURSE TITLE</strong></td>
+                            <td><strong></strong></td>
+                            <td><strong>CREDITS</strong></td>
+                            <td><strong>SCORE</strong></td>
+                            <td><strong></strong></td>
+                            <td class="text-center"><strong>GRADE POINT</strong></td>
+                            <td class="text-center"><strong>GRADE</strong></td>
+                        </tr>
+                    </tbody>
+                    <tbody style="font-size: 14px;" class="">
+                        {% for course in l200_first_semester %}
+                        <tr>
+                            <td><strong>{{ course.course_code }}</strong></td>
+                            {% set course_code = course.course_code %}
+                            <td>{{ course.course_title }}</td>
+                            <td></td>
+                            <td class="text-center">{{ course.credit_hour }}</td>
+                            <td class="text-center">{{ results[course_code.replace('-', '_')] }}</td>
+                            <td colspan="2" class="text-center" style="color: rgb(206, 26, 26);"><strong>Result Not
+                                    Published</strong> </td>
+                            <td class="text-center"></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+
+                    <tbody>
+                        <tr>
+                            <td colspan="8">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td colspan="6"></td>
+                            <td class="text-center"><strong class="text-decoration-underline" style="color: rgb(189, 71, 32);">Semester</strong>
+                            </td>
+                            <td class="text-center"><strong class="text-decoration-underline"
+                                    style="color: rgb(189, 71, 32);">Cumulative</strong></td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <div class="text-end"><strong>Total Credits Published: </strong></div>
+                            </td>
+                            <td>
+                                <div class="text-center"> 0 </div>
+                            </td>
+                            <td>
+                                <div class="text-center"> 0 </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <div class="text-end"><strong>Total Credits Passed: </strong></div>
+                            </td>
+                            <td>
+                                <div class="text-center"> 0 </div>
+                            </td>
+                            <td>
+                                <div class="text-center"> 0 </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <div class="text-end"><strong>Total Credits Taken: </strong></div>
+                            </td>
+                            <td>
+                                <div class="text-center"> 21 </div>
+                            </td>
+                            <td>
+                                <div class="text-center"> 21 </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <div class="text-end"><strong>Total Grade Points: </strong></div>
+                            </td>
+                            <td>
+                                <div class="text-center"> 0 </div>
+                            </td>
+                            <td>
+                                <div class="text-center">0.00 </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="6">
+                                <div class="text-end"><strong>Grade Point Average (GPA): </strong></div>
+                            </td>
+                            <td>
+                                <div class="text-center"> 0 </div>
+                            </td>
+                            <td>
+                                <div class="text-center">0 </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="8">&nbsp;</td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="8">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td colspan="8">&nbsp;</td>
+                        </tr>
+                    </tbody>
+                {% endif %}
+
+{#                Level 200 Second Semester for Level 300 and 400#}
+                {% if data.level == '400' or data.level == '300' %}
+                    <tbody>
+                        <tr>
+                            <td colspan="8">&nbsp;</td>
+                        </tr>
+                        <tr class="title">
+                            <td colspan="8">
+                                <h4 class="title" style="color: blue;"><strong>{{ year }}/{{ year + 1}} Level 200</strong></h4>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="8">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td colspan="8"><span class="text-md" style="color: rgb(155, 16, 16);"><strong>Second Semester
+                                    </strong></span></td>
+                        </tr>
+                        <tr>
+                            <td colspan="8">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td><strong>CODE</strong></td>
+                            <td><strong>COURSE TITLE</strong></td>
+                            <td><strong></strong></td>
+                            <td><strong>CREDITS</strong></td>
+                            <td><strong>SCORE</strong></td>
+                            <td><strong></strong></td>
+                            <td class="text-center"><strong>GRADE POINT</strong></td>
+                            <td class="text-center"><strong>GRADE</strong></td>
+                        </tr>
+                    </tbody>
+                    <tbody style="font-size: 14px;" class="">
+                        {% for course in l200_second_semester %}
+                        <tr>
+                            <td><strong>{{ course.course_code }}</strong></td>
+                            {% set course_code = course.course_code %}
+                            <td>{{ course.course_title }}</td>
+                            <td></td>
+                            <td class="text-center">{{ course.credit_hour }}</td>
+                            <td class="text-center">{{ results[course_code.replace('-', '_')] }}</td>
+                            <td colspan="2" class="text-center" style="color: rgb(206, 26, 26);"><strong>Result Not
+                                    Published</strong> </td>
+                            <td class="text-center"></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+
+                    <tbody>
+                        <tr>
+                            <td colspan="8">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td colspan="6"></td>
+                            <td class="text-center"><strong class="text-decoration-underline" style="color: rgb(189, 71, 32);">Semester</strong>
+                            </td>
+                            <td class="text-center"><strong class="text-decoration-underline"
+                                    style="color: rgb(189, 71, 32);">Cumulative</strong></td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <div class="text-end"><strong>Total Credits Published: </strong></div>
+                            </td>
+                            <td>
+                                <div class="text-center"> 0 </div>
+                            </td>
+                            <td>
+                                <div class="text-center"> 0 </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <div class="text-end"><strong>Total Credits Passed: </strong></div>
+                            </td>
+                            <td>
+                                <div class="text-center"> 0 </div>
+                            </td>
+                            <td>
+                                <div class="text-center"> 0 </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <div class="text-end"><strong>Total Credits Taken: </strong></div>
+                            </td>
+                            <td>
+                                <div class="text-center"> 21 </div>
+                            </td>
+                            <td>
+                                <div class="text-center"> 21 </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <div class="text-end"><strong>Total Grade Points: </strong></div>
+                            </td>
+                            <td>
+                                <div class="text-center"> 0 </div>
+                            </td>
+                            <td>
+                                <div class="text-center">0.00 </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="6">
+                                <div class="text-end"><strong>Grade Point Average (GPA): </strong></div>
+                            </td>
+                            <td>
+                                <div class="text-center"> 0 </div>
+                            </td>
+                            <td>
+                                <div class="text-center">0 </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="8">&nbsp;</td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="8">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td colspan="8">&nbsp;</td>
+                        </tr>
+                    </tbody>
+                {% endif %}
+
+{#                Level 300 First Semester for Level 400#}
+                {% if data.level == '400' %}
+                    <tbody>
+                        <tr>
+                            <td colspan="8">&nbsp;</td>
+                        </tr>
+                        <tr class="title">
+                            <td colspan="8">
+                                <h4 class="title" style="color: blue;"><strong>{{ year + 1 }}/{{ year + 2 }} Level 300</strong></h4>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="8">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td colspan="8"><span class="text-md" style="color: rgb(155, 16, 16);"><strong>First Semester
+                                    </strong></span></td>
+                        </tr>
+                        <tr>
+                            <td colspan="8">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td><strong>CODE</strong></td>
+                            <td><strong>COURSE TITLE</strong></td>
+                            <td><strong></strong></td>
+                            <td><strong>CREDITS</strong></td>
+                            <td><strong>SCORE</strong></td>
+                            <td><strong></strong></td>
+                            <td class="text-center"><strong>GRADE POINT</strong></td>
+                            <td class="text-center"><strong>GRADE</strong></td>
+                        </tr>
+                    </tbody>
+                    <tbody style="font-size: 14px;" class="">
+                        {% for course in l300_first_semester %}
+                        <tr>
+                            <td><strong>{{ course.course_code }}</strong></td>
+                            {% set course_code = course.course_code %}
+                            <td>{{ course.course_title }}</td>
+                            <td></td>
+                            <td class="text-center">{{ course.credit_hour }}</td>
+                            <td class="text-center">{{ results[course_code.replace('-', '_')] }}</td>
+                            <td colspan="2" class="text-center" style="color: rgb(206, 26, 26);"><strong>Result Not
+                                    Published</strong> </td>
+                            <td class="text-center"></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+
+                    <tbody>
+                        <tr>
+                            <td colspan="8">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td colspan="6"></td>
+                            <td class="text-center"><strong class="text-decoration-underline" style="color: rgb(189, 71, 32);">Semester</strong>
+                            </td>
+                            <td class="text-center"><strong class="text-decoration-underline"
+                                    style="color: rgb(189, 71, 32);">Cumulative</strong></td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <div class="text-end"><strong>Total Credits Published: </strong></div>
+                            </td>
+                            <td>
+                                <div class="text-center"> 0 </div>
+                            </td>
+                            <td>
+                                <div class="text-center"> 0 </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <div class="text-end"><strong>Total Credits Passed: </strong></div>
+                            </td>
+                            <td>
+                                <div class="text-center"> 0 </div>
+                            </td>
+                            <td>
+                                <div class="text-center"> 0 </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <div class="text-end"><strong>Total Credits Taken: </strong></div>
+                            </td>
+                            <td>
+                                <div class="text-center"> 21 </div>
+                            </td>
+                            <td>
+                                <div class="text-center"> 21 </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <div class="text-end"><strong>Total Grade Points: </strong></div>
+                            </td>
+                            <td>
+                                <div class="text-center"> 0 </div>
+                            </td>
+                            <td>
+                                <div class="text-center">0.00 </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="6">
+                                <div class="text-end"><strong>Grade Point Average (GPA): </strong></div>
+                            </td>
+                            <td>
+                                <div class="text-center"> 0 </div>
+                            </td>
+                            <td>
+                                <div class="text-center">0 </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="8">&nbsp;</td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="8">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td colspan="8">&nbsp;</td>
+                        </tr>
+                    </tbody>
+                {% endif %}
+
+{#                Level 300 Second Semester for Level 400#}
+                {% if data.level == '400' or data.level == '300' or data.level == '200' %}
+                    <tbody>
+                        <tr>
+                            <td colspan="8">&nbsp;</td>
+                        </tr>
+                        <tr class="title">
+                            <td colspan="8">
+                                <h4 class="title" style="color: blue;"><strong>{{ year + 1 }}/{{ year + 2 }} Level 300</strong></h4>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="8">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td colspan="8"><span class="text-md" style="color: rgb(155, 16, 16);"><strong>Second Semester
+                                    </strong></span></td>
+                        </tr>
+                        <tr>
+                            <td colspan="8">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td><strong>CODE</strong></td>
+                            <td><strong>COURSE TITLE</strong></td>
+                            <td><strong></strong></td>
+                            <td><strong>CREDITS</strong></td>
+                            <td><strong>SCORE</strong></td>
+                            <td><strong></strong></td>
+                            <td class="text-center"><strong>GRADE POINT</strong></td>
+                            <td class="text-center"><strong>GRADE</strong></td>
+                        </tr>
+                    </tbody>
+                    <tbody style="font-size: 14px;" class="">
+                        {% for course in l300_second_semester %}
+                        <tr>
+                            <td><strong>{{ course.course_code }}</strong></td>
+                            {% set course_code = course.course_code %}
+                            <td>{{ course.course_title }}</td>
+                            <td></td>
+                            <td class="text-center">{{ course.credit_hour }}</td>
+                            <td class="text-center">{{ results[course_code.replace('-', '_')] }}</td>
+                            <td colspan="2" class="text-center" style="color: rgb(206, 26, 26);"><strong>Result Not
+                                    Published</strong> </td>
+                            <td class="text-center"></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+
+                    <tbody>
+                        <tr>
+                            <td colspan="8">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td colspan="6"></td>
+                            <td class="text-center"><strong class="text-decoration-underline" style="color: rgb(189, 71, 32);">Semester</strong>
+                            </td>
+                            <td class="text-center"><strong class="text-decoration-underline"
+                                    style="color: rgb(189, 71, 32);">Cumulative</strong></td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <div class="text-end"><strong>Total Credits Published: </strong></div>
+                            </td>
+                            <td>
+                                <div class="text-center"> 0 </div>
+                            </td>
+                            <td>
+                                <div class="text-center"> 0 </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <div class="text-end"><strong>Total Credits Passed: </strong></div>
+                            </td>
+                            <td>
+                                <div class="text-center"> 0 </div>
+                            </td>
+                            <td>
+                                <div class="text-center"> 0 </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <div class="text-end"><strong>Total Credits Taken: </strong></div>
+                            </td>
+                            <td>
+                                <div class="text-center"> 21 </div>
+                            </td>
+                            <td>
+                                <div class="text-center"> 21 </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <div class="text-end"><strong>Total Grade Points: </strong></div>
+                            </td>
+                            <td>
+                                <div class="text-center"> 0 </div>
+                            </td>
+                            <td>
+                                <div class="text-center">0.00 </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="6">
+                                <div class="text-end"><strong>Grade Point Average (GPA): </strong></div>
+                            </td>
+                            <td>
+                                <div class="text-center"> 0 </div>
+                            </td>
+                            <td>
+                                <div class="text-center">0 </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="8">&nbsp;</td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="8">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td colspan="8">&nbsp;</td>
+                        </tr>
+                    </tbody>
+                {% endif %}
+
+{#                      This is for the current level#}
+                    <tbody>
+                        <tr>
+                            <td colspan="8">&nbsp;</td>
+                        </tr>
+                        <tr class="title">
+                            <td colspan="8">
+                                <h4 class="title" style="color: blue;"><strong>2023/2024 Level {{ data.level }}</strong></h4>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="8">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td colspan="8"><span class="text-md" style="color: rgb(155, 16, 16);"><strong>First Semester
+                                    </strong></span></td>
+                        </tr>
+                        <tr>
+                            <td colspan="8">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td><strong>CODE</strong></td>
+                            <td><strong>COURSE TITLE</strong></td>
+                            <td><strong></strong></td>
+                            <td><strong>CREDITS</strong></td>
+                            <td><strong>SCORE</strong></td>
+                            <td><strong></strong></td>
+                            <td class="text-center"><strong>GRADE POINT</strong></td>
+                            <td class="text-center"><strong>GRADE</strong></td>
+                        </tr>
+                    </tbody>
+                    <tbody style="font-size: 14px;" class="">
+                        {% for course in courses %}
+                        <tr>
+                            <td><strong>{{ course.course_code }}</strong></td>
+                            <td>{{ course.course_title }}</td>
+                            <td></td>
+                            <td class="text-center">{{ course.credit_hour }}</td>
+                            <td class="text-center">0</td>
+                            <td colspan="2" class="text-center" style="color: rgb(206, 26, 26);"><strong>Result Not
+                                    Published</strong> </td>
+                            <td class="text-center"></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+
+                    <tbody>
+                        <tr>
+                            <td colspan="8">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td colspan="6"></td>
+                            <td class="text-center"><strong class="text-decoration-underline" style="color: rgb(189, 71, 32);">Semester</strong>
+                            </td>
+                            <td class="text-center"><strong class="text-decoration-underline"
+                                    style="color: rgb(189, 71, 32);">Cumulative</strong></td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <div class="text-end"><strong>Total Credits Published: </strong></div>
+                            </td>
+                            <td>
+                                <div class="text-center"> 0 </div>
+                            </td>
+                            <td>
+                                <div class="text-center"> 0 </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <div class="text-end"><strong>Total Credits Passed: </strong></div>
+                            </td>
+                            <td>
+                                <div class="text-center"> 0 </div>
+                            </td>
+                            <td>
+                                <div class="text-center"> 0 </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <div class="text-end"><strong>Total Credits Taken: </strong></div>
+                            </td>
+                            <td>
+                                <div class="text-center"> 21 </div>
+                            </td>
+                            <td>
+                                <div class="text-center"> 21 </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">
+                                <div class="text-end"><strong>Total Grade Points: </strong></div>
+                            </td>
+                            <td>
+                                <div class="text-center"> 0 </div>
+                            </td>
+                            <td>
+                                <div class="text-center">0.00 </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="6">
+                                <div class="text-end"><strong>Grade Point Average (GPA): </strong></div>
+                            </td>
+                            <td>
+                                <div class="text-center"> 0 </div>
+                            </td>
+                            <td>
+                                <div class="text-center">0 </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="8">&nbsp;</td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="8">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td colspan="8">&nbsp;</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
