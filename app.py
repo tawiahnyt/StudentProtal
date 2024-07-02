@@ -257,12 +257,24 @@ def results():
                            l100_first_semester=l100_first_semester, l100_second_semester=l100_second_semester,
                            l200_first_semester=l200_first_semester, l200_second_semester=l200_second_semester,
                            l300_first_semester=l300_first_semester, l300_second_semester=l300_second_semester,
-                           results=results_data, courses=student_courses, year=year)
+                           results=results_data, courses=student_courses, year=year,
+                           l100_first_semester_credit_hour=sum([i['credit_hour'] for i in l100_first_semester]),
+                           l100_second_semester_credit_hour=sum([i['credit_hour'] for i in l100_second_semester]),
+                           l200_first_semester_credit_hour=sum([i['credit_hour'] for i in l200_first_semester]),
+                           l200_second_semester_credit_hour=sum([i['credit_hour'] for i in l200_second_semester]),
+                           l300_first_semester_credit_hour=sum([i['credit_hour'] for i in l300_first_semester]),
+                           l300_second_semester_credt_hour=sum([i['credit_hour'] for i in l300_second_semester]))
 
 
 @app.route('/evaluation')
 def evaluation():
     return render_template('evaluation.html')
+
+
+@app.route('/logout')
+def logout():
+    logout_user()
+    return redirect(url_for('login'))
 
 
 if __name__ == '__main__':

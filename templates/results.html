@@ -101,7 +101,7 @@
                         </tr>
                     </tbody>
                     <tbody style="font-size: 14px;" class="">
-                        {% for course in l100_first_semester %}
+                    {% for course in l100_first_semester %}
                         <tr>
                             <td><strong>{{ course.course_code }}</strong></td>
                             {% set course_code = course.course_code %}
@@ -109,11 +109,10 @@
                             <td></td>
                             <td class="text-center">{{ course.credit_hour }}</td>
                             <td class="text-center">{{ results[course_code.replace('-', '_')] }}</td>
-                            <td colspan="2" class="text-center" style="color: rgb(206, 26, 26);"><strong>Result Not
-                                    Published</strong> </td>
+                            <td colspan="2" class="text-center" style="color: rgb(206, 26, 26);"><strong>{{ results[course_code.replace('-', '_')] / l100_first_semester_credit_hour }}</strong> </td>
                             <td class="text-center"></td>
                         </tr>
-                        {% endfor %}
+                    {% endfor %}
                     </tbody>
 
                     <tbody>
@@ -718,7 +717,7 @@
                 {% endif %}
 
 {#                Level 300 Second Semester for Level 400#}
-                {% if data.level == '400' or data.level == '300' or data.level == '200' %}
+                {% if data.level == '400' %}
                     <tbody>
                         <tr>
                             <td colspan="8">&nbsp;</td>
